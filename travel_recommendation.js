@@ -24,7 +24,7 @@ if (searchBtn) {
 
     let catergory = '';
     
-    if (keyword.includes('beaches')) {
+    if (keyword.includes('beach')) {
         catergory = 'beaches';
     } else if (keyword.includes('temple')) {
         catergory = 'temples';
@@ -32,6 +32,45 @@ if (searchBtn) {
         catergory = 'countries';
     }
 
-    console.log('Search category:', catergory);
+    const resultsDiv = document.getElementById('searchResults');
+    resultsDiv.innerHTML = '';
+
+    fetch('./travel_recommendation_api.json')
+        .then(response => response.json())
+        .then(data => {
+            if(!catergory) {
+                resultsDiv,innerHTML = '<p>No recommendations found.</p>';
+                return;
+            }
+            let recommendations = data[catergory];
+        
+
+    if (catergory === 'countries') {
+        recommendations = recommendations.flatMap(country => country.cities);
+    }
+
+    recommendations.forEach(place => {
+        resultsDiv.innerHTML += `
+        <div class="recommendation">
+            <img src="${place.imageUrl}" alt="${place.name}" width="250">
+                <h3>${place.name}</h3>
+                <p>${place.description}</p>
+        </div>
+        `;
+    });
+
+document.getElementById('intro').style.display = 'none';
+    })
+    .catch(error => console.error('Error:', error));
     });
 }
+
+const clearBtn = document.getElementById('clearBtn');
+
+if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+        document.getElementById('questionInput').value = '';
+        document.getElementById('searchResults').innerHTML = '';
+        document.getElementById('intro').style.display = 'block';
+    });
+};
