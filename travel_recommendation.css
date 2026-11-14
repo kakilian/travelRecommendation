@@ -6,24 +6,33 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
 }
 
 nav {
     display:flex;
     align-items: center;
     background-color: #123c52;
-    padding: 15px 25px;
+    padding: 25px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav h1 {
     color: white;
     margin:0;
     flex: 1;
+    font-size: 32px;
 }
 
 nav a {
     color: white;
     text-decoration: underline;
+    font-size: 20px;
 }
 
 nav a:hover {
@@ -59,21 +68,26 @@ nav button {
     cursor: pointer;    
 }
 
+nav input,
+nav button {
+    font-size:18px;
+}
+
 nav button:hover {
     background-color: #b8e0e9;
 }
 
 h2 {
-    font-size: 35px;
+    font-size: 36px;
     position: absolute;
     top: 25%;
     left: 75%;
-    color: white
+    color: white;
 }
 
 .pageContent {
     padding: 30px;
-    max-width: 600px;
+    max-width: 500px;
     margin: 100px auto;
     color: white;
     background-color: rgba(0, 0, 0, 0.30);
@@ -81,6 +95,26 @@ h2 {
 }
 
 /* Contact Us Page */
+
+.contactInfo {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    background-color: rgba(0, 0, 0, 0.30);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.contactInfo a {
+    color: white;
+    text-decoration: none;
+}
+
+.contactInfo a:hover {
+    text-decoration: underline;
+}
 
 .contactIntro {
     max-width: 500px;
@@ -105,7 +139,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-#contatForm label {
+#contactForm label {
     display: block;
     margin-bottom: 5px;
 }
@@ -129,3 +163,71 @@ h2 {
 #contactForm button:hover {
     background-color: #b8e0e9;
 }
+
+.contactLayout {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px 5% 60px auto;
+    text-align: center;
+}
+
+.contactLayout h2 {
+    position: static;
+    color: white;
+    font-size: 32px;
+}
+
+.contactIntro,
+.contactInfo,
+#contactForm {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 25px auto;
+}
+
+/* Footer oon the side of the website */
+
+footer {
+    position: absolute;
+    padding: 20px;
+    color: white;
+}
+
+footer p {
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+    margin: 0;
+}
+
+.socialLinks {
+    position: fixed;
+    left: 30px;
+    top: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.socialLinks a {
+    color: white;
+    font-size: 35px;
+}
+
+.socialLinks a:hover {
+    color: #b8e0e9;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+label,
+#contactForm input,
+#contactForm textarea {
+    font-size: 18px;
+}
+
