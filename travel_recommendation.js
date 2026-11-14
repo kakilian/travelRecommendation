@@ -15,3 +15,23 @@ fetch('./travel_recommendation_api.json')
     .catch(error => {
         console.error('Error fetching data:', error);
     });
+
+const searchBtn = document.getElementById('searchBtn');
+
+if (searchBtn) {
+    searchBtn.addEventListener('click', function() {
+        const keyword = document.getElementById('questionInput').value.toLowerCase().trim();
+
+    let catergory = '';
+    
+    if (keyword.includes('beaches')) {
+        catergory = 'beaches';
+    } else if (keyword.includes('temple')) {
+        catergory = 'temples';
+    } else if (keyword.includes('countr')) {
+        catergory = 'countries';
+    }
+
+    console.log('Search category:', catergory);
+    });
+}
