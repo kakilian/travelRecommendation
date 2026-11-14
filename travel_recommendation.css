@@ -1,0 +1,80 @@
+body {
+    background-image: url("./beach.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+
+nav {
+    display:flex;
+    align-items: center;
+    background-color: #123c52;
+    padding: 15px 25px;
+}
+
+nav h1 {
+    color: white;
+    margin:0;
+    flex: 1;
+}
+
+nav a {
+    color: white;
+    text-decoration: underline;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 2;
+    
+}
+
+nav ul li:nth-child(3) {
+    margin-right: auto;
+}
+
+nav input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+nav button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;    
+}
+
+nav button:hover {
+    background-color: #b8e0e9;
+}
+
+h2 {
+    font-size: 35px;
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    color: white
+}
+
+.pageContent {
+    padding: 30px;
+    max-width: 600px;
+    margin: 100px auto;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.30);
+    border-radius: 10px;
+}
