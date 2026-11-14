@@ -86,9 +86,10 @@ h2 {
 }
 
 .pageContent {
-    padding: 30px;
+    padding: 15px;
     max-width: 500px;
     margin: 100px auto;
+    border: 80px;
     color: white;
     background-color: rgba(0, 0, 0, 0.30);
     border-radius: 10px;
@@ -231,3 +232,40 @@ label,
     font-size: 18px;
 }
 
+/* Meet the team */
+
+.team {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.teamMembers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.teamCard {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.30);
+    border-radius: 10px;
+    color: white;
+}
+
+.teamCard p {
+    margin: 0;
+}
+
+.teamCard img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px;
+}
