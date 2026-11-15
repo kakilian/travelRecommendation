@@ -64,7 +64,7 @@ document.getElementById('intro').style.display = 'none';
     .catch(error => console.error('Error:', error));
     });
 }
-
+// Clear Button to Clear Results
 const clearBtn = document.getElementById('clearBtn');
 
 if (clearBtn) {
@@ -74,3 +74,15 @@ if (clearBtn) {
         document.getElementById('intro').style.display = 'block';
     });
 };
+
+const options = {
+    timeZone: 'Asia/Tokyo',
+    hour12: true,
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+};
+
+const tokyoTime = new Date().toLocaleDateString('en-US', options);
+
+console.log("Current time in Tokyo:", tokyoTime);
